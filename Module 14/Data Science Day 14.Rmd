@@ -1,0 +1,563 @@
+---
+title: "Data Science Day 14"
+output: html_notebook
+---
+
+```{r}
+# My first program in R Programming
+myString <- "Hello, World!"
+
+print ( myString)
+```
+```{r}
+if(FALSE) {
+   "This is a demo for multi-line comments and it should be put inside either a single or double quote"
+}
+
+myString <- "Hello, World!"
+print ( myString)
+```
+```{r}
+v <- TRUE 
+print(class(v))
+```
+```{r}
+v <- 23.5
+print(class(v))
+```
+```{r}
+v <- 2L
+print(class(v))
+```
+```{r}
+v <- 2+5i
+print(class(v))
+```
+```{r}
+v <- "TRUE"
+print(class(v))
+```
+```{r}
+v <- charToRaw("Hello")
+print(class(v))
+```
+```{r}
+# Create a vector.
+apple <- c('red','green',"yellow")
+print(apple)
+
+# Get the class of the vector.
+print(class(apple))
+```
+```{r}
+# Create a list.
+list1 <- list(c(2,5,3),21.3,sin)
+
+# Print the list.
+print(list1)
+```
+```{r}
+# Create a matrix.
+M = matrix( c('a','a','b','c','b','a'), nrow = 2, ncol = 3, byrow = TRUE)
+print(M)
+```
+```{r}
+# Create an array.
+a <- array(c('green','yellow'),dim = c(3,3,2))
+print(a)
+```
+```{r}
+# Create a vector.
+apple_colors <- c('green','green','yellow','red','red','red','green')
+
+# Create a factor object.
+factor_apple <- factor(apple_colors)
+
+# Print the factor.
+print(factor_apple)
+print(nlevels(factor_apple))
+```
+```{r}
+# Create the data frame.
+BMI <- 	data.frame(
+   gender = c("Male", "Male","Female"), 
+   height = c(152, 171.5, 165), 
+   weight = c(81,93, 78),
+   Age = c(42,38,26)
+)
+print(BMI)
+```
+```{r}
+# Assignment using equal operator.
+var.1 = c(0,1,2,3)           
+
+# Assignment using leftward operator.
+var.2 <- c("learn","R")   
+
+# Assignment using rightward operator.   
+c(TRUE,1) -> var.3           
+
+print(var.1)
+cat ("var.1 is ", var.1 ,"\n")
+cat ("var.2 is ", var.2 ,"\n")
+cat ("var.3 is ", var.3 ,"\n")
+```
+```{r}
+var_x <- "Hello"
+cat("The class of var_x is ",class(var_x),"\n")
+
+var_x <- 34.5
+cat("  Now the class of var_x is ",class(var_x),"\n")
+
+var_x <- 27L
+cat("   Next the class of var_x becomes ",class(var_x),"\n")
+```
+```{r}
+print(ls())
+```
+```{r}
+# List the variables starting with the pattern "var".
+print(ls(pattern = "var"))
+```
+```{r}
+print(ls(all.name = TRUE))
+```
+```{r}
+rm(list = ls())
+print(ls())
+```
+```{r}
+# Create a sequence of numbers from 32 to 44.
+
+print(seq(32,44))
+```
+```{r}
+# Find mean of numbers from 25 to 82.
+
+print(mean(25:82))
+```
+```{r}
+# Find sum of numbers frm 41 to 68.
+
+print(sum(41:68))
+```
+```{r}
+# Create a function to print squares of numbers in sequence.
+new.function <- function(a) {
+   for(i in 1:a) {
+      b <- i^2
+      print(b)
+   }
+}
+```
+```{r}
+# Create a function to print squares of numbers in sequence.
+new.function <- function(a) {
+   for(i in 1:a) {
+      b <- i^2
+      print(b)
+   }
+}
+
+# Call the function new.function supplying 6 as an argument.
+new.function(6)
+```
+```{r}
+# Create a function without an argument.
+new.function <- function() {
+   for(i in 1:5) {
+      print(i^2)
+   }
+}	
+
+# Call the function without supplying an argument.
+
+new.function()
+```
+```{r}
+# Create a function with arguments.
+
+new.function <- function(a,b,c) {
+   result <- a * b + c
+   print(result)
+
+}
+
+# Call the function by position of arguments.
+new.function(5,3,11)
+
+# Call the function by names of the arguments.
+new.function(a = 11, b = 5, c = 3)
+```
+```{r}
+# Create a function with arguments.
+new.function <- function(a = 3, b = 6) {
+   result <- a * b
+   print(result)
+}
+
+# Call the function without giving any argument.
+new.function()
+
+# Call the function with giving new values of the argument.
+new.function(9,5)
+```
+```{r}
+# Create a function with arguments.
+new.function <- function(a, b) {
+   print(a^2)
+   print(a)
+   print(b)
+
+}
+
+# Evaluate the function without supplying one of the arguments.
+new.function(6)
+```
+```{r}
+# Atomic vector of type character.
+print("abc");
+
+# Atomic vector of type double.
+print(12.5)
+
+# Atomic vector of type integer.
+print(63L)
+
+# Atomic vector of type logical.
+print(TRUE)
+
+# Atomic vector of type complex.
+print(2+3i)
+
+# Atomic vector of type raw.
+print(charToRaw('hello'))
+```
+```{r}
+# Creating a sequence from 5 to 13.
+v <- 5:13
+print(v)
+
+# Creating a sequence from 6.6 to 12.6.
+v <- 6.6:12.6
+print(v)
+
+# If the final element specified does not belong to the sequence then it is discarded.
+v <- 3.8:11.4
+print(v)
+```
+```{r}
+# Create vector with elements from 5 to 9 incrementing by 0.4.
+print(seq(5, 9, by = 0.4))
+```
+```{r}
+# The logical and numeric values are converted to characters.
+s <- c('apple','red',5,TRUE)
+print(s)
+```
+```{r}
+# Accessing vector elements using position.
+t <- c("Sun","Mon","Tue","Wed","Thurs","Fri","Sat")
+u <- t[c(2,3,6)]
+print(u)
+
+# Accessing vector elements using logical indexing.
+v <- t[c(TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE)]
+print(v)
+
+# Accessing vector elements using negative indexing.
+x <- t[c(-2,-5)]
+print(x)
+
+# Accessing vector elements using 0/1 indexing.
+y <- t[c(0,0,0,0,0,0,1)]
+print(y)
+```
+```{r}
+# Create two vectors.
+v1 <- c(3,8,4,5,0,11)
+v2 <- c(4,11,0,8,1,2)
+
+# Vector addition.
+add.result <- v1+v2
+print(add.result)
+
+# Vector substraction.
+sub.result <- v1-v2
+print(sub.result)
+
+# Vector multiplication.
+multi.result <- v1*v2
+print(multi.result)
+
+# Vector division.
+divi.result <- v1/v2
+print(divi.result)
+```
+```{r}
+v1 <- c(3,8,4,5,0,11)
+v2 <- c(4,11)
+# V2 becomes c(4,11,4,11,4,11)
+
+add.result <- v1+v2
+print(add.result)
+
+sub.result <- v1-v2
+print(sub.result)
+```
+```{r}
+v <- c(3,8,4,5,0,11, -9, 304)
+
+# Sort the elements of the vector.
+sort.result <- sort(v)
+print(sort.result)
+
+# Sort the elements in the reverse order.
+revsort.result <- sort(v, decreasing = TRUE)
+print(revsort.result)
+
+# Sorting character vectors.
+v <- c("Red","Blue","yellow","violet")
+sort.result <- sort(v)
+print(sort.result)
+
+# Sorting character vectors in reverse order.
+revsort.result <- sort(v, decreasing = TRUE)
+print(revsort.result)
+```
+```{r}
+# Create a list containing strings, numbers, vectors and a logical values.
+list_data <- list("Red", "Green", c(21,32,11), TRUE, 51.23, 119.1)
+print(list_data)
+```
+```{r}
+# Create a list containing a vector, a matrix and a list.
+list_data <- list(c("Jan","Feb","Mar"), matrix(c(3,9,5,1,-2,8), nrow = 2),
+   list("green",12.3))
+
+# Give names to the elements in the list.
+names(list_data) <- c("1st Quarter", "A_Matrix", "A Inner list")
+
+# Show the list.
+print(list_data)
+```
+```{r}
+# Create a list containing a vector, a matrix and a list.
+list_data <- list(c("Jan","Feb","Mar"), matrix(c(3,9,5,1,-2,8), nrow = 2),
+   list("green",12.3))
+
+# Give names to the elements in the list.
+names(list_data) <- c("1st Quarter", "A_Matrix", "A Inner list")
+
+# Access the first element of the list.
+print(list_data[1])
+
+# Access the thrid element. As it is also a list, all its elements will be printed.
+print(list_data[3])
+
+# Access the list element using the name of the element.
+print(list_data$A_Matrix)
+```
+```{r}
+# Create a list containing a vector, a matrix and a list.
+list_data <- list(c("Jan","Feb","Mar"), matrix(c(3,9,5,1,-2,8), nrow = 2),
+   list("green",12.3))
+
+# Give names to the elements in the list.
+names(list_data) <- c("1st Quarter", "A_Matrix", "A Inner list")
+
+# Add element at the end of the list.
+list_data[4] <- "New element"
+print(list_data[4])
+
+# Remove the last element.
+list_data[4] <- NULL
+
+# Print the 4th Element.
+print(list_data[4])
+
+# Update the 3rd Element.
+list_data[3] <- "updated element"
+print(list_data[3])
+```
+```{r}
+# Create two lists.
+list1 <- list(1,2,3)
+list2 <- list("Sun","Mon","Tue")
+
+# Merge the two lists.
+merged.list <- c(list1,list2)
+
+# Print the merged list.
+print(merged.list)
+```
+```{r}
+# Create lists.
+list1 <- list(1:5)
+print(list1)
+
+list2 <-list(10:14)
+print(list2)
+
+# Convert the lists to vectors.
+v1 <- unlist(list1)
+v2 <- unlist(list2)
+
+print(v1)
+print(v2)
+
+# Now add the vectors
+result <- v1+v2
+print(result)
+```
+```{r}
+# Create the data frame.
+emp.data <- data.frame(
+
+   emp_id = c (1:5), 
+
+   emp_name = c("Rick","Dan","Michelle","Ryan","Gary"),
+
+   salary = c(623.3,515.2,611.0,729.0,843.25), 
+
+   start_date = as.Date(c("2012-01-01", "2013-09-23", "2014-11-15", "2014-05-11",
+      "2015-03-27")),
+   stringsAsFactors = FALSE
+)
+
+# Print the data frame.			
+print(emp.data)
+```
+```{r}
+# Create the data frame.
+emp.data <- data.frame(
+   emp_id = c (1:5), 
+  
+   emp_name = c("Rick","Dan","Michelle","Ryan","Gary"),
+
+   salary = c(623.3,515.2,611.0,729.0,843.25), 
+   
+   start_date = as.Date(c("2012-01-01", "2013-09-23", "2014-11-15", "2014-05-11",
+      "2015-03-27")),
+   stringsAsFactors = FALSE
+)
+
+# Get the structure of the data frame.
+str(emp.data)
+```
+```{r}
+# Create the data frame.
+emp.data <- data.frame(
+   emp_id = c (1:5), 
+   
+   emp_name = c("Rick","Dan","Michelle","Ryan","Gary"),
+
+   salary = c(623.3,515.2,611.0,729.0,843.25), 
+   
+   start_date = as.Date(c("2012-01-01", "2013-09-23", "2014-11-15", "2014-05-11",
+      "2015-03-27")),
+   stringsAsFactors = FALSE
+)
+
+# Print the summary.
+
+print(summary(emp.data))
+```
+```{r}
+# Create the data frame.
+
+emp.data <- data.frame(
+   emp_id = c (1:5),
+   emp_name = c("Rick","Dan","Michelle","Ryan","Gary"),
+   salary = c(623.3,515.2,611.0,729.0,843.25),
+   start_date = as.Date(c("2012-01-01","2013-09-23","2014-11-15","2014-05-11",
+      "2015-03-27")),
+   stringsAsFactors = FALSE
+)
+
+# Extract Specific columns.
+result <- data.frame(emp.data$emp_name,emp.data$salary)
+print(result)
+```
+```{r}
+# Create the data frame.
+
+emp.data <- data.frame(
+   emp_id = c (1:5),
+   emp_name = c("Rick","Dan","Michelle","Ryan","Gary"),
+   salary = c(623.3,515.2,611.0,729.0,843.25),
+   start_date = as.Date(c("2012-01-01", "2013-09-23", "2014-11-15", "2014-05-11",
+      "2015-03-27")),
+   stringsAsFactors = FALSE
+)
+
+# Extract first two rows.
+
+result <- emp.data[1:2,]
+print(result)
+```
+```{r}
+# Create the data frame.
+
+emp.data <- data.frame(
+   emp_id = c (1:5), 
+   emp_name = c("Rick","Dan","Michelle","Ryan","Gary"),
+   salary = c(623.3,515.2,611.0,729.0,843.25), 
+   start_date = as.Date(c("2012-01-01", "2013-09-23", "2014-11-15", "2014-05-11",
+     "2015-03-27")),
+   stringsAsFactors = FALSE
+)
+
+# Extract 3rd and 5th row with 2nd and 4th column.
+
+result <- emp.data[c(3,5),c(2,4)]
+print(result)
+```
+```{r}
+# Create the data frame.
+
+emp.data <- data.frame(
+   emp_id = c (1:5), 
+   emp_name = c("Rick","Dan","Michelle","Ryan","Gary"),
+   salary = c(623.3,515.2,611.0,729.0,843.25), 
+   start_date = as.Date(c("2012-01-01", "2013-09-23", "2014-11-15", "2014-05-11",
+      "2015-03-27")),
+   stringsAsFactors = FALSE
+)
+
+
+# Add the "dept" coulmn.
+emp.data$dept <- c("IT","Operations","IT","HR","Finance")
+v <- emp.data
+print(v)
+```
+```{r}
+# Create the first data frame.
+
+emp.data <- data.frame(
+   emp_id = c (1:5), 
+   emp_name = c("Rick","Dan","Michelle","Ryan","Gary"),
+   salary = c(623.3,515.2,611.0,729.0,843.25), 
+   start_date = as.Date(c("2012-01-01", "2013-09-23", "2014-11-15", "2014-05-11",
+      "2015-03-27")),
+   dept = c("IT","Operations","IT","HR","Finance"),
+   stringsAsFactors = FALSE
+)
+
+# Create the second data frame
+
+emp.newdata <- 	data.frame(
+   emp_id = c (6:8), 
+   emp_name = c("Rasmi","Pranab","Tusar"),
+   salary = c(578.0,722.5,632.8), 
+   start_date = as.Date(c("2013-05-21","2013-07-30","2014-06-17")),
+   dept = c("IT","Operations","Fianance"),
+   stringsAsFactors = FALSE
+
+)
+
+# Bind the two data frames.
+emp.finaldata <- rbind(emp.data,emp.newdata)
+print(emp.finaldata)
+```
+
