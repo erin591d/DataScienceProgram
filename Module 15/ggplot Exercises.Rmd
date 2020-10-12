@@ -1,0 +1,52 @@
+---
+title: "ggplot Exercises"
+output: html_notebook
+---
+1. 
+```{r}
+data <- read.csv("EconomistData.csv")
+```
+```{r}
+ggplot(data, aes(x=CPI,y=HDI)) + geom_point()
+```
+```{r}
+ggplot(data, aes(x=CPI,y=HDI)) + geom_point(color="blue")
+```
+```{r}
+ggplot(data, aes(x=CPI,y=HDI, color=Region)) + geom_point()
+```
+```{r}
+ggplot(data, aes(x=CPI,y=HDI, color=Region, size=2)) + geom_point()
+```
+```{r}
+ggplot(data, aes(x=CPI,y=HDI, color=Region, size=HDI.Rank)) + geom_point()
+```
+
+2. 
+```{r}
+ggplot(data, aes(x=CPI,y=HDI)) + geom_point()
+```
+```{r}
+ggplot(data, aes(x=CPI,y=HDI)) + geom_point() + geom_smooth()
+```
+```{r}
+ggplot(data, aes(x=CPI,y=HDI)) + geom_point() + geom_smooth(method="lm")
+```
+```{r}
+ggplot(data, aes(x=CPI,y=HDI)) + geom_point() + geom_line(stat="smooth", method="loess")
+```
+```{r}
+ggplot(data, aes(x = CPI, y = HDI)) + geom_point() + geom_smooth(method="loess", span=0.1)
+```
+
+3.
+```{r}
+ggplot(data, aes(x=CPI,y=HDI, color=Region)) + geom_point()
+```
+```{r}
+ggplot(data, aes(x=CPI,y=HDI, color=Region)) + geom_point() + labs(x="Corruption Perception Index", y="Human Development Index") + scale_color_hue(name="Regions", labels=c("Americas", "Asia Pacific", "East EU Central Asia", "EU West Europe", "Middle East North Africa", "Sub-Saharan Africa"))
+```
+```{r}
+ggplot(data, aes(x=CPI,y=HDI, color=Region)) + geom_point() + labs(x="Corruption Perception Index", y="Human Development Index") + scale_color_manual(name="Regions", labels=c("Americas", "Asia Pacific", "East EU Central Asia", "EU West Europe", "Middle East North Africa", "Sub-Saharan Africa"), values=c("red", "orange", "yellow", "green", "blue", "purple"))
+```
+

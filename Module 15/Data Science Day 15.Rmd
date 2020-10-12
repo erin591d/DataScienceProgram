@@ -1,0 +1,72 @@
+---
+title: "Data Science Day 15"
+output: html_notebook
+---
+
+Histogram
+```{r}
+x <- sample(1:100, 1000, replace=TRUE)
+hist(x)
+```
+Scatterplot
+```{r}
+x <- rnorm(100, mean=0, sd=1)
+y <- x + rnorm(100, mean=0, sd=1)
+plot(x,y)
+```
+```{r}
+x.s <- sort(x)
+y.s <- sort(y)
+plot(x.s, y.s); lines(x.s, y.s); abline(a=0, b=1, col="red")
+```
+The diamonds dataset
+```{r}
+data(diamonds)
+diamonds
+```
+```{r}
+View(diamonds) #dataset in spreadsheet
+```
+```{r}
+summary(diamonds)
+```
+```{r}
+dim(diamonds)
+```
+```{r}
+ggplot(data=diamonds) + geom_histogram(binwidth=500, aes(x=price)) + ggtitle("Diamond Price Distribution") + xlab("Diamond Price U$") + ylab("Frequency") + theme_minimal()
+```
+```{r}
+ggplot(diamonds, aes(x=carat,y=price)) + geom_point()
+```
+```{r}
+ggplot(diamonds, aes(x=carat,y=price, color=clarity)) + geom_point()
+```
+```{r}
+ggplot(diamonds, aes(x=carat,y=price, color=clarity, shape=cut)) + geom_point()
+```
+```{r}
+ggplot(diamonds, aes(x=carat,y=price, color=clarity, shape=cut)) + geom_point() + facet_wrap(~ cut)
+```
+```{r}
+ggplot(diamonds, aes(x=carat,y=price, color=clarity, shape=cut)) + geom_point() + facet_wrap(~ cut, nrow=5)
+```
+```{r}
+ggplot(diamonds, aes(x=carat,y=price)) + geom_point() + geom_smooth()
+```
+```{r}
+ggplot(diamonds, aes(x=carat,y=price, color=clarity)) + geom_point() + geom_smooth()
+```
+```{r}
+ggplot(diamonds, aes(x=carat,y=price, color=clarity)) + geom_point() + geom_smooth(method="lm")
+```
+```{r}
+today()
+```
+```{r}
+now(tzone = "")
+```
+```{r}
+
+```
+

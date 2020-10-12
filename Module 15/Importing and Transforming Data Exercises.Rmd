@@ -1,0 +1,40 @@
+---
+title: "Importing and Transforming Data Exercises"
+output: html_notebook
+---
+1. 
+```{r}
+library(tidyverse)
+```
+```{r}
+readr_example()
+```
+
+2. 
+```{r}
+mtcars <- read_csv(readr_example("mtcars.csv"))
+```
+
+3.
+```{r}
+mtcars[1:10,]
+```
+
+4.
+```{r}
+example <- read_log(readr_example("example.log"))
+```
+
+5.
+```{r}
+library(readxl)
+```
+```{r}
+excel_sheets(readxl_example("datasets.xlsx"))
+```
+
+6.
+```{r}
+read_excel(xlsx_example, sheet=4)
+```
+
